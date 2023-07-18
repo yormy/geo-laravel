@@ -9,7 +9,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('timezones', function (Blueprint $table) {
+        Schema::create('geo_timezones', function (Blueprint $table) {
             $table->string('name', 50)->primary();
             $table->string('country_code', 2)->nullable();
             $table->string('utc_std', 10)->nullable();
@@ -21,6 +21,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('timezones');
+        Schema::dropIfExists('geo_timezones');
     }
 };

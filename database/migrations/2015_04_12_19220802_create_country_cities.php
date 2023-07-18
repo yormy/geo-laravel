@@ -9,16 +9,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('country_cities', function (Blueprint $table) {
+        Schema::create('geo_country_cities', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('state_id');
-            $table->foreign('state_id')->references('id')->on('country_states')->onDelete('cascade');
+            $table->foreign('state_id')->references('id')->on('geo_country_states')->onDelete('cascade');
             $table->string('name');
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('country_cities');
+        Schema::dropIfExists('geo_country_cities');
     }
 };

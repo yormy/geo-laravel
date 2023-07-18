@@ -9,7 +9,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('country_names', function (Blueprint $table) {
+        Schema::create('geo_country_names', function (Blueprint $table) {
             $table->string('iso3', 3)->unique()->primary();
             $table->string('iso2', 2)->unique();
             $table->json('name');
@@ -20,6 +20,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('country_names');
+        Schema::dropIfExists('geo_country_names');
     }
 };
