@@ -9,8 +9,6 @@ use Yormy\GeoLaravel\ServiceProviders\RouteServiceProvider;
 
 class GeoServiceProvider extends ServiceProvider
 {
-    const CONFIG_FILE = __DIR__.'/../config/geo.php';
-
     const CONFIG_IDE_HELPER_FILE = __DIR__.'/../config/ide-helper.php';
 
     /**
@@ -18,19 +16,7 @@ class GeoServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        $this->publish();
-
-        $this->registerCommands();
-
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-
-        $this->registerMiddleware($router);
-
-        $this->registerListeners();
-
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'geo-laravel');
-
-        $this->registerTranslations();
 
         $this->morphMaps();
     }
@@ -40,51 +26,9 @@ class GeoServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(static::CONFIG_FILE, 'confirmables');
         $this->mergeConfigFrom(static::CONFIG_IDE_HELPER_FILE, 'ide-helper');
-
-        $this->app->register(EventServiceProvider::class);
-        $this->app->register(RouteServiceProvider::class);
     }
 
-    private function publish(): void
-    {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                self::CONFIG_FILE => config_path('geo.php'),
-            ], 'config');
-
-            $this->publishes([
-                __DIR__.'/../database/migrations/' => database_path('migrations'),
-            ], 'migrations');
-
-            $this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/geo'),
-            ], 'translations');
-        }
-    }
-
-    private function registerCommands(): void
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-            ]);
-        }
-    }
-
-    public function registerMiddleware(Router $router): void
-    {
-    }
-
-    public function registerListeners(): void
-    {
-        //        $this->app['events']->listen(TripwireBlockedEvent::class, NotifyAdmin::class);
-    }
-
-    public function registerTranslations(): void
-    {
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'geo');
-    }
 
     private function morphMaps(): void
     {
