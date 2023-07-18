@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CountryState extends Model
 {
+    protected $table = 'geo_country_states';
+
     public function country()
     {
         return $this->hasOne(CountryName::class);

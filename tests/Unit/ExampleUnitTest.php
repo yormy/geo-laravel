@@ -2,6 +2,7 @@
 
 namespace Yormy\GeoLaravel\Tests\Features;
 
+use Yormy\GeoLaravel\Models\CountryCity;
 use Yormy\GeoLaravel\Tests\TestCase;
 
 class ExampleUnitTest extends TestCase
@@ -9,8 +10,9 @@ class ExampleUnitTest extends TestCase
     /**
      * @test
      */
-    public function example(): void
+    public function CityExists(): void
     {
-        $this->assertTrue(true);
+        $country = CountryCity::find(10);
+        $this->assertEquals('Akividu', $country->name);
     }
 }

@@ -31,6 +31,8 @@ class CountryName extends Model
 {
     use HasTranslations;
 
+    protected $table = 'geo_country_names';
+
     protected $translatable = ['name'];
 
     public $primaryKey = 'iso3';

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Timezone extends Model
 {
+    protected $table = 'geo_country_timezones';
+
     public $primaryKey = 'name';
 
     public $timestamps = false;
