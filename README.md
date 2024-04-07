@@ -20,4 +20,3 @@
 ## License
 
 The MIT License (MIT). Please see [License File]((https://yormy.github.io/geo-laravel/general/license.html) for more information.
-
