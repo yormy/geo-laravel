@@ -4,8 +4,6 @@ namespace Yormy\GeoLaravel;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Yormy\GeoLaravel\ServiceProviders\EventServiceProvider;
-use Yormy\GeoLaravel\ServiceProviders\RouteServiceProvider;
 
 class GeoServiceProvider extends ServiceProvider
 {
@@ -28,7 +26,6 @@ class GeoServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(static::CONFIG_IDE_HELPER_FILE, 'ide-helper');
     }
-
 
     private function morphMaps(): void
     {

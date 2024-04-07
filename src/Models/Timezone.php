@@ -13,7 +13,6 @@ class Timezone extends Model
     public $timestamps = false;
 
     public $casts = [
-        'name' => 'string'
+        'name' => 'string',
     ];
-
 }

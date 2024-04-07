@@ -36,6 +36,7 @@ class CountryName extends Model
     protected $translatable = ['name'];
 
     public $primaryKey = 'iso3';
+
     public $incrementing = false;
 
     public $timestamps = false;
