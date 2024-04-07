@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Timezone extends Model
 {
-
     public $primaryKey = 'name';
 
     public $timestamps = false;
@@ -16,5 +15,6 @@ class Timezone extends Model
     public $casts = [
         'name' => 'string',
     ];
+
     protected $table = 'geo_timezones';
 }
