@@ -1,19 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\GeoLaravel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Timezone extends Model
 {
-    protected $table = 'geo_timezones';
-
     public $primaryKey = 'name';
 
     public $timestamps = false;
 
     public $casts = [
-        'name' => 'string'
+        'name' => 'string',
     ];
 
+    protected $table = 'geo_timezones';
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\GeoLaravel\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -10,13 +12,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property int $state_id
  * @property string $name
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity query()
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CountryCity whereStateId($value)
+ *
  * @mixin \Eloquent
+ *
  * @property-read CountryState|null $state
  */
 class CountryCity extends Model

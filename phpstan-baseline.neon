@@ -1,0 +1,61 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Yormy\\\\GeoLaravel\\\\Models\\\\CountryCity\\:\\:state\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Models/CountryCity.php
+
+		-
+			message: "#^PHPDoc tag @mixin contains unknown class Eloquent\\.$#"
+			count: 1
+			path: src/Models/CountryCity.php
+
+		-
+			message: "#^Method Yormy\\\\GeoLaravel\\\\Models\\\\CountryName\\:\\:states\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Models/CountryName.php
+
+		-
+			message: "#^PHPDoc tag @mixin contains unknown class Eloquent\\.$#"
+			count: 1
+			path: src/Models/CountryName.php
+
+		-
+			message: "#^Property Yormy\\\\GeoLaravel\\\\Models\\\\CountryName\\:\\:\\$translatable has no type specified\\.$#"
+			count: 1
+			path: src/Models/CountryName.php
+
+		-
+			message: "#^Method Yormy\\\\GeoLaravel\\\\Models\\\\CountryState\\:\\:cities\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Models/CountryState.php
+
+		-
+			message: "#^Method Yormy\\\\GeoLaravel\\\\Models\\\\CountryState\\:\\:country\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Models/CountryState.php
+
+		-
+			message: "#^PHPDoc tag @mixin contains unknown class Eloquent\\.$#"
+			count: 1
+			path: src/Models/CountryState.php
+
+		-
+			message: "#^Cannot call method orderBy\\(\\) on Yormy\\\\GeoLaravel\\\\Models\\\\CountryName\\|null\\.$#"
+			count: 1
+			path: src/Repositories/CountryRepository.php
+
+		-
+			message: "#^Cannot call method where\\(\\) on Yormy\\\\GeoLaravel\\\\Models\\\\CountryName\\|null\\.$#"
+			count: 1
+			path: src/Repositories/CountryRepository.php
+
+		-
+			message: "#^Cannot call method orderBy\\(\\) on Yormy\\\\GeoLaravel\\\\Models\\\\Timezone\\|null\\.$#"
+			count: 1
+			path: src/Repositories/TimezoneRepository.php
+
+		-
+			message: "#^Cannot call method where\\(\\) on Yormy\\\\GeoLaravel\\\\Models\\\\Timezone\\|null\\.$#"
+			count: 1
+			path: src/Repositories/TimezoneRepository.php

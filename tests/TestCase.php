@@ -4,7 +4,6 @@ namespace Yormy\GeoLaravel\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Spatie\LaravelRay\RayServiceProvider;
 use Yormy\GeoLaravel\GeoServiceProvider;
 
 abstract class TestCase extends BaseTestCase

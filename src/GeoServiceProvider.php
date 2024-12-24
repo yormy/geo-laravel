@@ -1,20 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yormy\GeoLaravel;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Yormy\GeoLaravel\ServiceProviders\EventServiceProvider;
-use Yormy\GeoLaravel\ServiceProviders\RouteServiceProvider;
 
 class GeoServiceProvider extends ServiceProvider
 {
-    const CONFIG_IDE_HELPER_FILE = __DIR__.'/../config/ide-helper.php';
+    public const CONFIG_IDE_HELPER_FILE = __DIR__.'/../config/ide-helper.php';
 
     /**
      * @psalm-suppress MissingReturnType
      */
-    public function boot(Router $router)
+    public function boot(Router $router): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
@@ -24,11 +24,10 @@ class GeoServiceProvider extends ServiceProvider
     /**
      * @psalm-suppress MixedArgument
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(static::CONFIG_IDE_HELPER_FILE, 'ide-helper');
     }
-
 
     private function morphMaps(): void
     {
